@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="bootstrap-5.1.1-dist/css/bootstrap.min.css" media = "all">
+    <link rel="stylesheet" href="bootstrap-5.1.1-dist/css/bootstrap.min.css" media = "screen"> -->
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <!-- <link href="/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="style.css"/>
+    <title>Home | Expert System for Diabetes</title>
+  </head>
+  <body>
+    <header id="main-header" class="text-primary bg-dark">
+      <div class="container">
+        <nav class="nav justify-content-between p-1 bg-dark">
+            <img src="img/logo.JPG" alt="" class="logo">
+          <ul class="d-flex">
+            <li class="nav-item"><a href="#" class="btn btn-primary btn-sm">Home</a></li>
+            <li class="nav-item"><a href="about.html" class="btn btn-secondary btn-sm">About</a></li>
+            <li class="nav-item">
+              <button class="btn btn-secondary btn-sm mx-1" data-bs-toggle="modal" data-bs-target="#patient-login"><i class="icon-user"></i>Patient Login</button>
+              <button class="btn btn-secondary btn-sm mx-1" data-bs-toggle="modal" data-bs-target="#admin-login"><i class="icon-user"></i>Doctor Login</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section id="main-section" class="d-flex justify-content-center align-items-center p-2">
+      <div class="container p-5">
+        <div class="text-center">
+          <h1 class="text-light">EXPERT SYSTEM FOR DIAGNOSING <span class="text-primary">Diabetes</span></h1>
+          <p class="lead text-light">Most people know of someone in their family who has been diagnosed with Diabetes. The earlier doctors find Diabetes, the sooner treatment can start. So it’s helpful to know the most common types of Diabetes, their symptom and prevention.</p>
+        </div>
+      </div>
+    </section>
+    <footer id="main-footer" class="p-3 bg-dark">
+      <p class="lead text-center text-light">&copy; 2021 Designed by <span class="text-warning">codeGraphics</span></p>
+    </footer>
+
+    <!-- PATIENT STUFF -->
+    <!-- Modal For Patient Sign Up-->
+    <div
+    class="modal fade"
+    id="patient-sign-up"
+    tabindex="-1"
+    aria-labelledby="patient-sign-upLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="patient-sign-upLabel">Sign Up as Patient</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body p-3">
+          <p class="lead">Fill out this form to get access to Patient page</p>
+          <div id="alert-patient-sign-up"></div>
+          <form id="patient-sign-in-form">
+            <div class="mb-3">
+              <label for="patient-sign-in-name" class="col-form-label">Full Name:</label>
+              <input type="text" class="form-control" id="patient-sign-in-name" />
+            </div>
+            <div class="mb-3">
+              <label for="patient-sign-in-email" class="col-form-label">Email:</label>
+              <input type="email" class="form-control" id="patient-sign-in-email" />
+            </div>
+            <div class="mb-3">
+              <label for="patient-sign-in-password" class="col-form-label">Password:</label>
+              <input type="password" class="form-control" id="patient-sign-in-password" />
+            </div>
+            <div class="mb-3">
+              <label for="patient-sign-in-confirm-password" class="col-form-label">Confirm Password:</label>
+              <input type="password" class="form-control" id="patient-sign-in-confirm-password"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a class="btn btn-secondary" href="#!" data-bs-toggle="modal" data-bs-target="#patient-login">Login</a>
+        </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Patient Login -->
+   <div class="modal fade" id="patient-login" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="loginLabel">Patient Login</h5>
+         <button
+           type="button"
+           class="btn-close"
+           data-bs-dismiss="modal"
+           aria-label="Close"
+         ></button>
+       </div>
+       <div class="modal-body p-2">
+         <p class="lead">Fill out this form to Login as patient</p>
+         <div id="alert-box-login"></div>
+         <form id="patient-login-form">
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="text" id="patient-login-email" class="form-control" />
+            <label class="form-label" for="patient-login-email">Email</label>
+          </div>
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input type="password" id="patient-login-password" class="form-control" />
+            <label class="form-label" for="patient-login-password">Password</label>
+          </div>
+        
+          <!-- 2 column grid layout for inline styling -->
+          <div class="row mb-4">
+            <div class="col">
+              <!-- Simple link -->
+              Forgot Password? <a href="#!" data-bs-toggle="modal" data-bs-target="#patientSecurityModal">Click here</a>
+            </div>
+          </div>
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-md m-1">Login</button>
+          <a class="btn btn-secondary" href="#!" data-bs-toggle="modal" data-bs-target="#patient-sign-up">Sign up</a>
+        </form>
+       </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+ <!-- MODAL FOR PATIENT SECURITY -->
+   <div class="modal fade" id="patientSecurityModal" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="loginLabel">Get Password</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-body p-2">
+         <p class="lead">Enter Email to retrieve your password</p>
+         <div id="alert-box-security"></div>
+         <form id="patient-security-form">
+          <!-- Username input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="patient-sec-email">Enter Email</label>
+            <input type="email" id="patient-sec-email" class="form-control" /><br>
+            <label id="see-password"></label>
+          </div>      
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-md m-1">Enter</button>
+            <a class="btn btn-secondary" href="#" data-bs-toggle="modal" data-bs-target="#patient-login">Login</a>
+        </form>
+       </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+ <!-- ADMIN STUFFS -->
+
+     <!-- Modal For A Sign Up-->
+     <div
+     class="modal fade"
+     id="admin-sign-up"
+     tabindex="-1"
+     aria-labelledby="admin-sign-up-label"
+     aria-hidden="true"
+   >
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="admin-sign-up-label">Sign Up as Doctor</h5>
+           <button
+             type="button"
+             class="btn-close"
+             data-bs-dismiss="modal"
+             aria-label="Close"
+           ></button>
+         </div>
+         <div class="modal-body p-3">
+           <p class="lead">Fill out this form to get access to Doctor page</p>
+           <div id="alert-admin-sign-in-box"></div>
+           <form id="admin-sign-in-form">
+             <div class="mb-3">
+               <label for="admin-sign-in-name" class="col-form-label">Full Name:</label>
+               <input type="text" class="form-control" id="admin-sign-in-name" />
+             </div>
+             <div class="mb-3">
+               <label for="admin-sign-in-email" class="col-form-label">Email:</label>
+               <input type="email" class="form-control" id="admin-sign-in-email" />
+             </div>
+             <div class="mb-3">
+               <label for="admin-sign-in-password" class="col-form-label">Password:</label>
+               <input type="password" class="form-control" id="admin-sign-in-password" />
+             </div>
+             <div class="mb-3">
+               <label for="admin-sign-in-confirm-password" class="col-form-label">Confirm Password:</label>
+               <input type="password" class="form-control" id="admin-sign-in-confirm-password"/>
+             </div>
+             <button type="submit" class="btn btn-primary">Submit</button>
+             <a class="btn btn-secondary" href="#!" data-bs-toggle="modal" data-bs-target="#admin-login">Login</a>
+         </div>
+           </form>
+         </div>
+         <div class="modal-footer">
+       </div>
+     </div>
+   </div>
+ 
+   <!-- Modal for Admin Login -->
+    <div class="modal fade" id="admin-login" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginLabel">Doctor Login</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body p-2">
+          <p class="lead">Fill out this form to Login as Doctor</p>
+          <div id="alert-admin-login-box"></div>
+          <form id="admin-login-form">
+           <!-- Email input -->
+           <div class="form-outline mb-4">
+             <input type="text" id="admin-login-email" class="form-control" />
+             <label class="form-label" for="admin-login-email">Email</label>
+           </div>
+           <!-- Password input -->
+           <div class="form-outline mb-4">
+             <input type="password" id="admin-login-password" class="form-control" />
+             <label class="form-label" for="admin-login-password">Password</label>
+           </div>
+         
+           <!-- 2 column grid layout for inline styling -->
+           <div class="row mb-4">
+             <div class="col">
+               <!-- Simple link -->
+               Forgot Password? <a href="#!" data-bs-toggle="modal" data-bs-target="#admin-security-modal">Click here</a>
+             </div>
+           </div>
+           <!-- Submit button -->
+           <button type="submit" class="btn btn-primary btn-md m-1">Login</button>
+           <a class="btn btn-secondary" href="#!" data-bs-toggle="modal" data-bs-target="#admin-sign-up">Sign up</a>
+         </form>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+ 
+  <!-- MODAL FOR ADMIN SECURITY -->
+    <div class="modal fade" id="admin-security-modal" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginLabel">Get Password</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-2">
+          <p class="lead">Enter Email to retrieve your password</p>
+          <div id="alert-admin-security-box"></div>
+          <form id="admin-security-form">
+           <!-- Username input -->
+           <div class="form-outline mb-4">
+             <label class="form-label" for="admin-sec-email">Enter Email</label>
+             <input type="email" id="admin-sec-email" class="form-control" /><br>
+             <label id="see-admin-password"></label>
+           </div>      
+           <!-- Submit button -->
+           <button type="submit" class="btn btn-primary btn-md m-1">Enter</button>
+             <a class="btn btn-secondary" href="#" data-bs-toggle="modal" data-bs-target="#admin-login">Login</a>
+         </form>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="bootstrap-5.1.1-dist/js/bootstrap.min.js"></script>
+    <!-- <script src="app.js"></script> -->
+    <script src="signin.js"></script>
+  </body>
+</html>
